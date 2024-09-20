@@ -15,13 +15,17 @@ Square *** setUpPuzzle(int ** puzzle){
         
            // allocate memory for sudoku 
            sudoku[i][j] = (Square*)malloc(sizeof(Square)*9);
-
+            
+           //allocate the number stored in memory 
            sudoku[i][j]->number = puzzle[i][j];
 
+            // allocate the row num of puzzle 
            sudoku[i][j]->row = i;
 
+            // alloate the column num of puzzle 
            sudoku[i][j]->column = j;
 
+            // determine what bits i possible and allocate to struct 
            if (sudoku[i][j]->number != 0){
                 sudoku[i][j]->code = POSSIBLE;
            }
